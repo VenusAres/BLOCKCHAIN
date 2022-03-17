@@ -16,4 +16,8 @@ contract Hello {
     function getKeccak() public pure returns(bytes4) {
         return bytes4(keccak256("hello(uint256,uint256)")^bytes4(keccak256("world()")));
     }
+    // check address or contract
+    function getLength(address addr) public view returns (uint) {
+        return addr.code.length;
+    }
 }
